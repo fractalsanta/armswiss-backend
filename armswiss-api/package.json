@@ -1,0 +1,40 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon api.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "api.1.js"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "mongoose": "^5.9.21",
+    "mysql": "^2.18.1",
+    "ngrok": "^3.2.7",
+    "nodemailer": "^6.4.10",
+    "sequelize": "^6.3.5",
+    "zcrmsdk": "0.0.20",
+    "ejs": "latest",
+    "aws-sdk": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

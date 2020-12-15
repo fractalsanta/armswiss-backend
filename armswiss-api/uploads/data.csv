@@ -1,0 +1,70 @@
+id,email,eventId,description,eventDate
+419,louw@geminisolution.co.za,search,Alpha Leonis,2020-12-08T15:41:07.000Z
+420,dave@armswissrep.com,search,syz,2020-12-10T08:39:08.000Z
+421,dave@armswissrep.com,search,syz pfs,2020-12-10T08:39:16.000Z
+422,css0412@armswissrep.com,search,syz pfs,2020-12-10T08:45:39.000Z
+423,css0412@armswissrep.com,search,pfs,2020-12-10T09:09:11.000Z
+424,css0412@armswissrep.com,search,pfs syz,2020-12-10T09:09:15.000Z
+425,css0412@armswissrep.com,search,pfs syz hsbc,2020-12-10T09:09:19.000Z
+426,css0412@armswissrep.com,search,syz,2020-12-10T09:13:28.000Z
+427,css0412@armswissrep.com,search,syz hsbc,2020-12-10T09:13:43.000Z
+428,css0412@armswissrep.com,search,syz hsbc pfs,2020-12-10T09:13:51.000Z
+429,css0412@armswissrep.com,search,general oriental hsbc,2020-12-10T09:14:11.000Z
+430,css0412@armswissrep.com,search,general oriental hsbc syz,2020-12-10T09:14:38.000Z
+431,css0412@armswissrep.com,search,general oriental,2020-12-10T09:14:45.000Z
+432,css0412@armswissrep.com,search,general oriental leonis,2020-12-10T09:15:30.000Z
+433,css0412@armswissrep.com,search,general oriental leonis hsbc,2020-12-10T09:15:37.000Z
+434,css0412@armswissrep.com,search,syz,2020-12-10T09:16:41.000Z
+435,css0412@armswissrep.com,search,syz fund 1,2020-12-10T09:16:48.000Z
+436,css0412@armswissrep.com,search,syz hsbc,2020-12-10T09:16:54.000Z
+437,css0412@armswissrep.com,search,syz hsbc pfs,2020-12-10T09:20:50.000Z
+438,css0412@armswissrep.com,search,syz hsbc pfs oriental,2020-12-10T09:21:00.000Z
+439,louw@geminisolution.co.za,search,syz hsbc,2020-12-10T09:21:23.000Z
+440,dave@armswissrep.com,search,syz,2020-12-10T10:34:29.000Z
+441,dave@armswissrep.com,search,syz pfs,2020-12-10T10:34:35.000Z
+442,dave@armswissrep.com,search,syz,2020-12-10T10:34:44.000Z
+443,dave@armswissrep.com,search,pfs,2020-12-10T10:34:49.000Z
+444,dave@armswissrep.com,search,pfs syz,2020-12-10T10:34:54.000Z
+445,css0412@armswissrep.com,search,syz,2020-12-10T10:37:47.000Z
+446,louw@geminisolution.co.za,search,Miras,2020-12-10T11:03:43.000Z
+447,dave@armswissrep.com,search,szy,2020-12-10T15:25:17.000Z
+448,dave@armswissrep.com,search,syz,2020-12-10T15:25:25.000Z
+449,louw@geminisolution.co.za,search,Miras,2020-12-13T09:56:39.000Z
+450,louw@geminisolution.co.za,search,general oriental hsbc syz,2020-12-13T10:00:29.000Z
+451,louw@geminisolution.co.za,search,general oriental hsbc syz,2020-12-13T10:04:46.000Z
+452,louw@geminisolution.co.za,search,general oriental,2020-12-13T10:04:53.000Z
+453,louw@geminisolution.co.za,search,hsbc syz,2020-12-13T10:05:01.000Z
+454,louw@geminisolution.co.za,search,hsbc,2020-12-13T10:05:07.000Z
+455,louw@geminisolution.co.za,search,syz,2020-12-13T10:05:11.000Z
+456,louw@geminisolution.co.za,search,general oriental hsbc syz,2020-12-13T10:06:31.000Z
+457,louw@geminisolution.co.za,search,general oriental hsbc syz,2020-12-13T10:07:24.000Z
+458,louw@geminisolution.co.za,login,louw@geminisolution.co.za has logged in,2020-12-13T10:22:47.000Z
+459,louw@geminisolution.co.za,search,Miras,2020-12-13T10:24:04.000Z
+460,louw@geminisolution.co.za,search,Alpha Leonis,2020-12-13T10:30:26.000Z
+461,louw@geminisolution.co.za,search,Miras,2020-12-13T10:31:30.000Z
+462,admin@armswissrep.com,viewdetails,Miras Investments - Swiss based advisor,2020-12-13T10:31:34.000Z
+463,louw@geminisolution.co.za,search,asdf,2020-12-13T10:32:58.000Z
+464,louw@geminisolution.co.za,search,Miras,2020-12-13T10:35:29.000Z
+465,admin@armswissrep.com,viewdetails,Miras Investments - Swiss based advisor,2020-12-13T10:35:33.000Z
+466,louw@geminisolution.co.za,downloadpdf,PDF Downloaded,2020-12-13T10:35:37.000Z
+467,admin@armswissrep.com,viewdetails,Miras Investments - Swiss based advisor,2020-12-13T10:38:56.000Z
+468,louw@geminisolution.co.za,downloadpdf,Miras Investments - Swiss based advisor,2020-12-13T10:39:02.000Z
+469,admin@armswissrep.com,viewdetails,Miras Investments - Swiss based advisor,2020-12-13T10:42:17.000Z
+470,louw@geminisolution.co.za,viewcustomsearch,Viewed custom search,2020-12-13T10:48:15.000Z
+471,louw@geminisolution.co.za,submitcustomsearch,testingNAME,2020-12-13T10:48:54.000Z
+472,louw@geminisolution.co.za,failedlogin,louw@geminisolution.co.za failed to log in,2020-12-13T10:51:27.000Z
+473,louw@geminisolution.co.za,otpsent,OTP sent to user email,2020-12-13T10:54:42.000Z
+474,louw@geminisolution.co.za,otpsent,OTP sent to user email,2020-12-13T16:19:34.000Z
+475,louw@geminisolution.co.za,otpsent,OTP sent to user email,2020-12-14T06:41:36.000Z
+476,louw@geminisolution.co.za,otpsent,OTP sent to user email,2020-12-14T06:48:21.000Z
+477,louw@geminisolution.co.za,search,general oriental hsbc syz,2020-12-14T06:49:03.000Z
+478,louw@geminisolution.co.za,search,syz,2020-12-14T06:49:09.000Z
+479,louw@geminisolution.co.za,search,syz hsbc,2020-12-14T06:49:17.000Z
+480,louw@geminisolution.co.za,failedlogin,louw@geminisolution.co.za failed to log in,2020-12-14T06:49:49.000Z
+481,louw@geminisolution.co.za,login,louw@geminisolution.co.za has logged in,2020-12-14T06:50:00.000Z
+482,fractalsanta@gmail.com,otpsent,OTP sent to user email,2020-12-14T08:19:24.000Z
+483,fractalsanta@gmail.com,otpsent,OTP sent to user email,2020-12-14T08:19:42.000Z
+484,dave@armswissrep.com,login,dave@armswissrep.com has logged in,2020-12-14T10:51:27.000Z
+485,dave@armswissrep.com,search,syz,2020-12-14T10:51:37.000Z
+486,admin@armswissrep.com,viewdetails,Banque Syz SA,2020-12-14T10:54:33.000Z
+487,admin@armswissrep.com,login,admin@armswissrep.com has logged in,2020-12-14T11:06:18.000Z
