@@ -41,7 +41,7 @@ async function initialiseClient() {
 async function bootstrapOauthFromSelfClient() {
     await initialiseClient();
     //do whatever required after initialize
-    grant_token = "1000.86c3ff8d3e89cc7c7daad1c536899f6a.7526a5705294e5b2b2c088ac9f51d133";
+    grant_token = "1000.2462323b4c7766503260a951f24a14b8.2e93dd911070229493128ec5cf6f56d7";
     user_identifier = "tim@geminisolution.co.za";
 
     const authResponse = await ZCRMRestClient.generateAuthTokens(user_identifier, grant_token);
