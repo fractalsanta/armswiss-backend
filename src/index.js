@@ -28,18 +28,20 @@ const configJson = {
     "base_url": "www.zohoapis.com", //optional ,"www.zohoapis.com" is default value
     "iamurl": "accounts.zoho.com", //optional ,"accounts.zoho.com" is default value
     "version": "v2.1", //optional ,"v2" is default value
-    "tokenmanagement": `${__dirname}/tokenManagement.js`
+    "mysql_username":"root",//optional ,"root" is default value
+    "mysql_password":"DBPassword",//optional ,"" is default value
+    //"tokenmanagement": `${__dirname}/tokenManagement.js`
 }
 
 async function initialiseClient() {
-    console.log("TOKEN DIR", configJson.tokenmanagement);
+   // console.log("TOKEN DIR", configJson.tokenmanagement);
     await ZCRMRestClient.initialize(configJson);
 }
 
 async function bootstrapOauthFromSelfClient() {
     await initialiseClient();
     //do whatever required after initialize
-    grant_token = "1000.b88a25aea1ac2d59d86d8c10fbabdbd6.47950c760625a52b3161d3b04213010c";
+    grant_token = "1000.e7f602c8d35c2e39580659a94b544819.e335d36ea397db7bcafb65fc3237f163";
     user_identifier = "tim@geminisolution.co.za";
 
     const authResponse = await ZCRMRestClient.generateAuthTokens(user_identifier, grant_token);
@@ -87,7 +89,7 @@ async function testSDK() {
      
 }
 
-// bootstrapOauthFromSelfClient();
+bootstrapOauthFromSelfClient();
 // testSDK();
 
 
