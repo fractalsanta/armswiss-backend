@@ -17,6 +17,7 @@
   "dependencies": {
     "async": "^3.2.0",
     "aws-sdk": "^2.787.0",
+    "aws-serverless-express": "^3.4.0",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -36,9 +37,11 @@
     "nodemailer": "^6.4.10",
     "otp-generator": "^2.0.0",
     "sequelize": "^6.3.5",
+    "serverless-http": "^2.6.0",
     "zcrmsdk": "0.0.20"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "serverless-offline": "^6.8.0"
   }
 }

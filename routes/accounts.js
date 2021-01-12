@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+
 const ZCRMRestClient = require('zcrmsdk');
 const utils = require('../utils.js');
 const url = require('url');
@@ -10,12 +10,22 @@ const eventController = require('../controllers/events-log');
 const cors = require('cors');
 const bcrypt = require("bcryptjs");
 const moment = require('moment');
+const mysql = require('mysql')
+
+const router = express.Router();
+const bodyParser = require('body-parser');
+
 
 router.post('/sendRegistration', (req, res) => {
     utils.sendRegistrationEmail(req.body)
     res.send({ status: 'OK' });
 })
-
+router.post('/test-aws', (req, res) => {
+   // atob(encodedString)
+    const bodytest = atob(req.body);
+    console.log(bodytest);
+    res.send({ status: 'OK' });
+})
 router.get('/accounts', (req, res) => {
     input = {};
     input.module = "Accounts";

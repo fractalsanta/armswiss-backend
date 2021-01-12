@@ -8,6 +8,7 @@ const router = express.Router();
 
 exports.logEvent = async (eventName, details, userId) => {
     let detailsToLog = details;
+    console.log("ATTEMPTING TO LOG EVENT");
     if(typeof details == 'object') {
         detailsToLog = details.join(' ');
     }

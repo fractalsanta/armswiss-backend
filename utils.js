@@ -8,15 +8,26 @@ module.exports = {
             "redirect_url": "localhost:3000",
             "user_identifier": "tim@geminisolution.co.za",
             "mysql_username": "root",
-            "mysql_password": "",
-            "code": '1000.8ee7e8ba74e3d2a31bd1ffcfd6aa3f9b.fbb11798912e1554280415bfe9b1c6ae'//This is the code from the self client generation in the zoho dev console, also referred to as the grant token
+            "mysql_password": "DBPassword",
+            "code": '1000.dcc3e877539049b446da729d4d1d63a7.cf0cf7b199bae50750fb61078a23fb06'//This is the code from the self client generation in the zoho dev console, also referred to as the grant token
         }
 
         //Always get token with scope  aaaserver.profile.READ, ZohoCRM.modules.All
         ZCRMRestClient.initialize(configJson).then(function (t)//Use ZCRMRestClient.initialize(configJson).then(function() for configuration array
         {
             console.log('Zoho Rest Client initialized');
+
+            
         });
+        // ZCRMRestClient.generateAuthTokens("tim@geminisolution.co.za",'1000.ae368438d5e56ee0079d21a4a0b78fa4.de4a5d32bedbfa39a5e3a1baa8e72be3').then(function(auth_response){
+        //   console.log("access token :"+auth_response.access_token);
+        //   console.log("refresh token :"+auth_response.refresh_token);
+        //   console.log("expires in :"+auth_response.expires_in);
+        //   });
+    },
+    getZohoToken: function() {
+      const ZCRMRestClient = require('zcrmsdk');
+     
 
     },
     sendRegistrationEmail: function (formData) {
@@ -258,20 +269,67 @@ module.exports = {
       const mysql = require('mysql');
     
       
-      const db = mysql.createPool({
-        
-        // host: 'localhost',
-        // user: 'root',
-        // password: '',
-        // database: 'zohooauth'
-        host: process.env.RDS_HOSTNAME,
-        user: process.env.RDS_USERNAME,
-        password: process.env.RDS_PASSWORD,
-        database: process.env.RDS_DBNAME,
-        port: process.env.RDS_PORT,
-        multipleStatements: true
+      const pool = mysql.createPool({
+        host: 'aa9uo6h2kolbf.cni0rmt7gbgj.us-east-2.rds.amazonaws.com',
+        user: 'root',
+        password: 'DBPassword',
+        database: 'zohooauth',
+        port: 3306
       });
       
-      return db;
-    }
-  };
+      return pool;
+    },
+
+
+  testSDK: async function(input) {
+     // await this.initialiseClient();
+      const ZCRMRestClient = require('zcrmsdk');
+     // const moduleResponse = await ZCRMRestClient.API.SETTINGS.getModules({});
+    //  console.log(moduleResponse);
+  
+      var input = {
+          module: 'Allocators',
+          params: {
+            page: 0,
+            per_page: 50,
+            criteria: '((Keyword_1:equals:syz) or (Keyword_2:equals:syz) or (Keyword_3:equals:syz))'
+          }
+        }
+  
+      const moduleResp = await ZCRMRestClient.API.MODULES.search(input)
+      return JSON.parse(moduleResp.body).data;
+      // .then(function (response) {
+      //     console.log("SEARCH RESULTS:", JSON.parse(response.body).data);
+      //     return JSON.parse(response.body).data;
+      // });
+      
+  },
+    MakeQuerablePromise: function(promise) {
+      // Don't modify any promise that has been already modified.
+      if (promise.isResolved) return promise;
+
+      // Set initial state
+      var isPending = true;
+      var isRejected = false;
+      var isFulfilled = false;
+
+      // Observe the promise, saving the fulfillment in a closure scope.
+      var result = promise.then(
+          function(v) {
+              isFulfilled = true;
+              isPending = false;
+              return v; 
+          }, 
+          function(e) {
+              isRejected = true;
+              isPending = false;
+              throw e; 
+          }
+      );
+
+      result.isFulfilled = function() { return isFulfilled; };
+      result.isPending = function() { return isPending; };
+      result.isRejected = function() { return isRejected; };
+      return result;
+  }
+};
