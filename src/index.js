@@ -89,7 +89,7 @@ async function testSDK() {
      
 }
 
-bootstrapOauthFromSelfClient();
+//bootstrapOauthFromSelfClient();
 // testSDK();
 
 
