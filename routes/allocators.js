@@ -46,88 +46,88 @@ router.post('/search', async (req, res, next) => {
     input.params = params;
     var keywords = [];
     console.log("INPUT:", input);
-    const testing = await utils.testSDK(input);
+   // const testing = await utils.testSDK(input);
 
-    return res.status(200).json({ data: testing });
+   // return res.status(200).json({ data: testing });
     // .then(function (response) {
     //     console.log("response from async func:", response);
     //     return res.status(200).json({ data: testing });
     // });
     
-    // const moduleResp = await ZCRMRestClient.API.MODULES.search(input).then(function (response) {
-    //     const result = response.body;
-    //     console.log(result)
-    //     var resultsToFilter = JSON.parse(response.body).data;
+    ZCRMRestClient.API.MODULES.search(input).then(function (response) {
+        const result = response.body;
+        console.log(result)
+        var resultsToFilter = JSON.parse(response.body).data;
 
-    //     console.log('in search')
-    //     if(resultsToFilter) {
-    //         resultsToFilter.forEach(data => {
-    //             var entireSearchStr = formData.keyword.toString().toLowerCase();
-    //        // console.log("if: " + entireSearchStr + " includes '" + data.Keyword_1 + "' or '" + data.Keyword_2 + "' or '" + data.Keyword_3 + "'")
-    //             // if ((data.Keyword_1 && entireSearchStr.includes(data.Keyword_1.toLowerCase()) || (data.Keyword_2 && entireSearchStr.includes(data.Keyword_2.toLowerCase())) || (data.Keyword_3 && entireSearchStr.includes(data.Keyword_3.toLowerCase())))) {
-    //             //     dataToSend.push(data)
-    //             // }
-    //             if ((data.Keyword_1 && entireSearchStr.toLowerCase() === data.Keyword_1.toLowerCase()) || (data.Keyword_2 && entireSearchStr.toLowerCase() === data.Keyword_2.toLowerCase()) || (data.Keyword_3 && entireSearchStr.toLowerCase() === data.Keyword_3.toLowerCase())) {
-    //                 dataToSend.push(data)
-    //             }
-    //         });
-    //     }
+        console.log('in search')
+        if(resultsToFilter) {
+            resultsToFilter.forEach(data => {
+                var entireSearchStr = formData.keyword.toString().toLowerCase();
+           // console.log("if: " + entireSearchStr + " includes '" + data.Keyword_1 + "' or '" + data.Keyword_2 + "' or '" + data.Keyword_3 + "'")
+                // if ((data.Keyword_1 && entireSearchStr.includes(data.Keyword_1.toLowerCase()) || (data.Keyword_2 && entireSearchStr.includes(data.Keyword_2.toLowerCase())) || (data.Keyword_3 && entireSearchStr.includes(data.Keyword_3.toLowerCase())))) {
+                //     dataToSend.push(data)
+                // }
+                if ((data.Keyword_1 && entireSearchStr.toLowerCase() === data.Keyword_1.toLowerCase()) || (data.Keyword_2 && entireSearchStr.toLowerCase() === data.Keyword_2.toLowerCase()) || (data.Keyword_3 && entireSearchStr.toLowerCase() === data.Keyword_3.toLowerCase())) {
+                    dataToSend.push(data)
+                }
+            });
+        }
         
-    //     //console.log(dataToSend)
-    // }).catch(error => console.log("ZOHO error", error)).then(function (response) {
-    //     console.log(requestParams.length)
-    //     var newSearchStr = "(";
-    //     if (requestParams.length > 2) {
-    //         params.page = 0;
-    //         params.per_page = 50;
-    //         var nextSlice = [];
+        //console.log(dataToSend)
+    }).catch(error => console.log("ZOHO error", error)).then(function (response) {
+        console.log(requestParams.length)
+        var newSearchStr = "(";
+        if (requestParams.length > 2) {
+            params.page = 0;
+            params.per_page = 50;
+            var nextSlice = [];
 
-    //         nextSlice = requestParams.slice(2);
+            nextSlice = requestParams.slice(2);
 
-    //         nextSlice.forEach((item, index) => {
+            nextSlice.forEach((item, index) => {
 
-    //             var newItem = item.replace("(", "\\(").replace(")", "\\)");
-    //             newSearchStr += "(Keyword_1:equals:" + newItem + ") or (Keyword_2:equals:" + newItem + ") or (Keyword_3:equals:" + newItem + ")";
+                var newItem = item.replace("(", "\\(").replace(")", "\\)");
+                newSearchStr += "(Keyword_1:equals:" + newItem + ") or (Keyword_2:equals:" + newItem + ") or (Keyword_3:equals:" + newItem + ")";
 
-    //             if (index !== nextSlice.length - 1)
-    //                 newSearchStr += " or ";
-    //             else
-    //                 newSearchStr += ")";
-    //         });
+                if (index !== nextSlice.length - 1)
+                    newSearchStr += " or ";
+                else
+                    newSearchStr += ")";
+            });
 
-    //         params.criteria = newSearchStr.replace(/\/\/+/g, '/');
+            params.criteria = newSearchStr.replace(/\/\/+/g, '/');
 
-    //         console.log(params.criteria)
-    //         input.params = params;
-    //         var keywords = [];
+            console.log(params.criteria)
+            input.params = params;
+            var keywords = [];
 
-    //         const moduleResp2 = await ZCRMRestClient.API.MODULES.search(input).then(function (response) {
-    //             const result = response.body;
+            ZCRMRestClient.API.MODULES.search(input).then(function (response) {
+                const result = response.body;
 
-    //             var resultsToFilter = JSON.parse(response.body).data;
+                var resultsToFilter = JSON.parse(response.body).data;
 
-    //             response_info = JSON.parse(response.body).info;
-    //            // console.log(response_info.more_records);
-    //            if(resultsToFilter) {
-    //                 resultsToFilter.forEach(data => {
-    //                     var entireSearchStr = formData.keyword.toString().toLowerCase();
-    //                 // console.log("if " +entireSearchStr+" includes ", data.Keyword_1.toLowerCase());
-    //                 // console.log(data.Keyword_1, data.Keyword_2);
-    //                 //  console.log(data.Keyword_1);
-    //                 if ((data.Keyword_1 && entireSearchStr.includes(data.Keyword_1.toLowerCase()) || (data.Keyword_2 && entireSearchStr.includes(data.Keyword_2.toLowerCase())) || (data.Keyword_3 && entireSearchStr.includes(data.Keyword_3.toLowerCase())))) {
-    //                     dataToSend.push(data)
-    //                     }
-    //                 });
-    //             }
+                response_info = JSON.parse(response.body).info;
+               // console.log(response_info.more_records);
+               if(resultsToFilter) {
+                    resultsToFilter.forEach(data => {
+                        var entireSearchStr = formData.keyword.toString().toLowerCase();
+                    // console.log("if " +entireSearchStr+" includes ", data.Keyword_1.toLowerCase());
+                    // console.log(data.Keyword_1, data.Keyword_2);
+                    //  console.log(data.Keyword_1);
+                    if ((data.Keyword_1 && entireSearchStr.includes(data.Keyword_1.toLowerCase()) || (data.Keyword_2 && entireSearchStr.includes(data.Keyword_2.toLowerCase())) || (data.Keyword_3 && entireSearchStr.includes(data.Keyword_3.toLowerCase())))) {
+                        dataToSend.push(data)
+                        }
+                    });
+                }
                 
-    //         }).catch(error => console.log(error))
-    //     }
-    // })
-    // .then(function() { eventController.logEvent("search", requestParams, formData.userId) })
-    // .then(function (response) {
-    //     //res.send({ data: dataToSend });
-    //     return res.status(200).json({ data: dataToSend });
-    // });
+            }).catch(error => console.log(error))
+        }
+    })
+    .then(function() { eventController.logEvent("search", requestParams, formData.userId) })
+    .then(function (response) {
+        //res.send({ data: dataToSend });
+        return res.status(200).json({ data: dataToSend });
+    });
 
 });
 
