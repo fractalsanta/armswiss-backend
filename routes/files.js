@@ -91,17 +91,20 @@ router.get('/csv', (req, res,next) => {
         if (error) throw error;
         
         else {
-            const data = JSON.parse(JSON.stringify(results));
+            const data = results;
             filepath = path.join(__dirname, '../uploads')
             var ws = fs.createWriteStream(filepath+"/data.csv");
             fastcsv
             .write(data, { headers: true })
             .on("finish", function() {
- 
-                //result.send("<a href='/public/data.csv' download='data.csv' id='download-link'></a><script>document.getElementById('download-link').click();</script>");
-                res.sendFile(filepath);
+                console.log("finsihed file");
+                
             })
             .pipe(ws);
+
+            return res.status(200).json({
+                success: 'File created'
+            })
         }
 
     });

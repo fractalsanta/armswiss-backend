@@ -41,7 +41,7 @@ async function initialiseClient() {
 async function bootstrapOauthFromSelfClient() {
     await initialiseClient();
     //do whatever required after initialize
-    grant_token = "1000.085565ff164d696fc680cc5281b2548f.61dc06fb6a119a8b4a1bf432ca6a0dd6";
+    grant_token = "1000.912e771c770ae475250b1d123a1caf95.4c3cc4274c1f02f9e1f27a43bc67261e";
     user_identifier = "tim@geminisolution.co.za";
 
     const authResponse = await ZCRMRestClient.generateAuthTokens(user_identifier, grant_token);
@@ -89,7 +89,7 @@ async function testSDK() {
      
 }
 
-//bootstrapOauthFromSelfClient();
+bootstrapOauthFromSelfClient();
 // testSDK();
 
 
@@ -116,8 +116,8 @@ app.use('/admin', cors(), adminRouter);
 app.use('/files', cors(), fileRouter);
 
 
-app.listen(3000, function() {
-    console.log('Server runnin on localhost: 3000');
+app.listen(3030, function() {
+    console.log('Server runnin on localhost: 3030');
 });
 console.log('Server init2')
 
